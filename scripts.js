@@ -47,7 +47,7 @@ function addTask() {
 
 // Store user input values in an object
   const newTask = {
-    id: initialTasks.length++,
+    id: initialTasks.length + 1, //Add 1 from previous total length because ID will increase by 1 everytime a new task is added
     title: taskTitle,
     description: taskDescription,
     status: taskStatus,
@@ -61,4 +61,4 @@ function getCompletedTasks () {
 
 }
 
-console.log(`All tasks: ${initialTasks}`);
+console.log(initialTasks);
