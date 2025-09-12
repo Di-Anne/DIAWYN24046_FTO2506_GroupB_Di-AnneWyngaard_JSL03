@@ -57,4 +57,8 @@ function addTask() {
   initialTasks.push(newTask);
 }
 
+function getCompletedTasks () {
 
+}
+
+console.log(`All tasks: ${initialTasks}`);
