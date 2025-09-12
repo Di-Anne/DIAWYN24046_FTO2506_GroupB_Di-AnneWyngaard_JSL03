@@ -1,52 +1,41 @@
 // Prompt users for task 1 title, description and status inputs
+let task1Title = prompt("Enter task 1 title:");
+let task1Description = prompt("Enter task 1 description:");
 
-let titleTask1 = prompt("Enter task 1 title:");
+// Convert the status input to lowercase
+let task1Status = prompt("Enter task 1 status (todo, doing, done):").toLowerCase(); 
 
-let descriptionTask1 = prompt("Enter task 1 description:");
-
-let statusTask1 = prompt("Enter task 1 status (todo, doing, done):").toLowerCase(); //convert the status input to lowercase
-
-// check if user status input is valid, if not return user to prompt
-
-while (statusTask1 !== "todo" && statusTask1 !== "doing" && statusTask1 !== "done") {
-  alert(`Invalid status. Please enter "todo", "doing" or "done"`);
-  statusTask1 = prompt("Enter task 1 status (todo, doing, done):").toLowerCase();
+// Check if user status input is valid, if not return user to prompt
+while (task1Status !== "todo" && task1Status !== "doing" && task1Status !== "done") {
+  alert("Invalid status. Please enter 'todo', 'doing' or 'done'");
+  task1Status = prompt("Enter task 1 status (todo, doing, done):").toLowerCase();
 }
 
-// Check if task 1 is done and log it
-
-if (statusTask1 === "done") {
-    console.log(titleTask1 + ": " + "Make corrections to JSL01, " + "status: " + statusTask1);
-}
 
 // Repeat everything for Task 2
+let task2Title = prompt("Enter task 2 title:");
+let task2Description = prompt("Enter task 2 description:");
+let task2Status = prompt("Enter task 2 status (todo, doing, done):").toLowerCase(); 
 
-let titleTask2 = prompt("Enter task 2 title:");
-
-let descriptionTask2 = prompt("Enter task 2 description:");
-
-let statusTask2 = prompt("Enter task 2 status (todo, doing, done):").toLowerCase(); //convert the status input to lowercase
-
-// check if user status input is valid, if not return user to prompt
-
-while (statusTask2 !== "todo" && statusTask2 !== "doing" && statusTask2 !== "done") {
-    alert(`Invalid status. Please enter "todo", "doing" or "done"`);
-    statusTask2 = prompt("Enter task 2 status (todo, doing, done):").toLowerCase();
+while (
+    task2Status !== "todo" && task2Status !== "doing" && task2Status !== "done") {
+    alert("Invalid status. Please enter 'todo', 'doing' or 'done'");
+    task2Status = prompt("Enter task 2 status (todo, doing, done):").toLowerCase();
 }
 
-// Check if task 2 is done and log it
+// Check if task 1 and 2 is done and log it
+if (task1Status === "done") {
+    console.log(`Title: ${task1Title}. Status: ${task1Status}.`);
+}
 
-if (statusTask2 === "done") {
-    console.log(titleTask2 + ": " + "Make corrections to JSL02, " + "status: " + statusTask2);
+if (task2Status === "done") {
+    console.log(`Title: ${task2Title}. Status: ${task2Status}.`);
 }
 
 // If neither task 1 nor 2 is done give encouring message
-
-if (statusTask1 !== "done" && statusTask2 !== "done") {
+if (task2Status !== "done" && task2Status !== "done") {
     console.log("No tasks completed, let's get to work!");
 } 
-
-
 
 const initialTasks = [
   {
