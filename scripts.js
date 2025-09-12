@@ -25,6 +25,7 @@ const taskTitle = prompt("Enter task title:");
 const taskDescription = prompt("Enter task description:");
 let taskStatus = prompt("Enter task status (todo, doing, done):").toLowerCase();
 
+// Loop until user enters valid status input: 'todo', 'doing', or 'done'
 while (
     taskStatus !== "todo" &&
     taskStatus !== "doing" &&
@@ -34,9 +35,13 @@ while (
     taskStatus = prompt("Enter task status (todo, doing, done):").toLowerCase();
   }
 
+// Store user input values in an object
 const newTask = {
   id: initialTasks.length++,
   title: taskTitle,
   description: taskDescription,
   status: taskStatus,
 }
+
+// Add new tasks to initial tasks array
+initialTasks.push(newTask);
