@@ -20,28 +20,36 @@ const initialTasks = [
   },
 ];
 
-// User may add new task vua prompt and only 'todo', 'doing' or 'done' may be used as status inputs
-const taskTitle = prompt("Enter task title:");
-const taskDescription = prompt("Enter task description:");
-let taskStatus = prompt("Enter task status (todo, doing, done):").toLowerCase();
-
-// Loop until user enters valid status input: 'todo', 'doing', or 'done'
-while (
-    taskStatus !== "todo" &&
-    taskStatus !== "doing" &&
-    taskStatus !== "done"
-  ) {
-    alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
-    taskStatus = prompt("Enter task status (todo, doing, done):").toLowerCase();
-  }
-
-// Store user input values in an object
-const newTask = {
-  id: initialTasks.length++,
-  title: taskTitle,
-  description: taskDescription,
-  status: taskStatus,
+while (initialTasks.length < 6) {
+  addTask()
 }
 
+// User may add new task vua prompt and only 'todo', 'doing' or 'done' may be used as status inputs
+function addTask() {
+  const taskTitle = prompt("Enter task title:");
+  const taskDescription = prompt("Enter task description:");
+  let taskStatus = prompt("Enter task status (todo, doing, done):").toLowerCase();
+
+// Loop until user enters valid status input: 'todo', 'doing', or 'done'
+  while (
+      taskStatus !== "todo" &&
+      taskStatus !== "doing" &&
+      taskStatus !== "done"
+    ) {
+      alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
+      taskStatus = prompt("Enter task status (todo, doing, done):").toLowerCase();
+    }
+
+// Store user input values in an object
+  const newTask = {
+    id: initialTasks.length++,
+    title: taskTitle,
+    description: taskDescription,
+    status: taskStatus,
+  }
+
 // Add new tasks to initial tasks array
-initialTasks.push(newTask);
+  initialTasks.push(newTask);
+}
+
+
