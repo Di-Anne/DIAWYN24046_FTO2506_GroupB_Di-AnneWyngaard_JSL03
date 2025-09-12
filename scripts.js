@@ -20,8 +20,13 @@ const initialTasks = [
   },
 ];
 
+// Repeat function until 
 while (initialTasks.length < 6) {
   addTask()
+}
+
+if (initialTasks.length === 6) {
+  alert("There are enough tasks on your board. Please check them in the console.")
 }
 
 // User may add new task vua prompt and only 'todo', 'doing' or 'done' may be used as status inputs
