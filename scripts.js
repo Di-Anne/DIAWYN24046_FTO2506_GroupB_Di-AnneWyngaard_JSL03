@@ -36,11 +36,7 @@ function addTask() {
   let taskStatus = prompt("Enter task status (todo, doing, done):").toLowerCase();
 
 // Loop until user enters valid status input: 'todo', 'doing', or 'done'
-  while (
-      taskStatus !== "todo" &&
-      taskStatus !== "doing" &&
-      taskStatus !== "done"
-    ) {
+  while (taskStatus !== "todo" && taskStatus !== "doing" && taskStatus !== "done") {
       alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
       taskStatus = prompt("Enter task status (todo, doing, done):").toLowerCase();
     }
@@ -61,8 +57,9 @@ function addTask() {
 function findcompletedTasks () {
   return initialTasks.filter((task) => task.status === "done");
 }
-//Display completed tasks in console
-console.log(`Completed tasks: ${findcompletedTasks ()}`)
 
 //Display ALL tasks in console
-console.log(`All tasks: ${initialTasks}`);
+console.log("All tasks: ", initialTasks);
+
+//Display completed tasks in console
+console.log("Completed tasks: ", findcompletedTasks ());
