@@ -57,8 +57,12 @@ function addTask() {
   initialTasks.push(newTask);
 }
 
-function getCompletedTasks () {
-
+//Filter all completed tasks in an array
+function findcompletedTasks (status) {
+  return initialTasks.filter((task) => task.status === "done");
 }
+//Display completed tasks in console
+console.log(`Completed tasks: ${findcompletedTasks ()}`)
 
-console.log(initialTasks);
+//Display ALL tasks in console
+console.log(`All tasks: ${initialTasks});
