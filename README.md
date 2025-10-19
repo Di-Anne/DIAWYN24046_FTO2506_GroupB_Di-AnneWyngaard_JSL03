@@ -1,4 +1,4 @@
-# JSL03 Project Brief: Console-Based Task Manager
+# JSL03 Project: Console-Based Task Manager
 
 ## Important Prerequisite
 
@@ -9,19 +9,36 @@
 
 This project involves creating a **simple task management system** where users can add **up to three new tasks** to an existing task array. Tasks are **stored as objects in an array**, each with a **unique incremental ID**. Users will enter task details via prompts, and the system will allow filtering to view only completed tasks. The project focuses on **array manipulation, user interaction via prompts and alerts, and console logging for task management**.
 
-## Key Objectives
+## Features Covered
 
-### Logic & User Interaction
+The solution demonstrates how to:
 
-- Store tasks as **objects inside an array** for structured data management.
-- Allow users to **add up to three new tasks** to the existing task list.
-- Ensure each new task has a **unique incremental ID** based on the last task in the array.
-- Prompt users to enter **task details (title, description, status)** and store them in an object.
-- Alert users when they reach the task limit with the message:
-  _"There are enough tasks on your board, please check them in the console."_
-  Implement a **filter function** to display only tasks with the status `"done"`.
-- Log **all tasks** in the console with a clear label for easy review.
-- Log **only completed tasks** (status: `"done"`) in the console under a "Completed Tasks" label for quick reference.
+- Initialize an array of task objects with various states
+- Prompt the user to **add new tasks** until the list contains exactly six items
+- Validate task status input using a loop to prevent invalid entries
+- Encapsulate logic into clearly named, reusable functions
+- Display both the full list of tasks and completed tasks (`status: "done"`) in the console
+- Alert the user when the task board is full
+
+## Structure
+
+The project includes:
+
+- 📦 A task array initialized with 3 predefined tasks
+- ✍️ `addTask()` function that handles all user input and validation
+- 🔁 A loop that fills the board with user-provided tasks until there are 6 total
+- ✅ A `getCompletedTasks()` function that filters and returns completed tasks
+- 💬 Alerts and console messages that give users useful feedback
+
+## How to Use This JSL03
+
+1. Open the project in **VS Code** with **Live Server** or run it in a browser environment that supports `prompt()` and `alert()`.
+2. Open your browser’s **developer console** to see the task list output.
+3. Walk through the code and observe how:
+   - Tasks are structured and stored
+   - Input is validated in real-time
+   - Functions promote clean and modular design
+4. Reflect on how to apply these concepts to more complex task management or UI-driven applications.
 
 ## Code Quality & Maintainability
 
